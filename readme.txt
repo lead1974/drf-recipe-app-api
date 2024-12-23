@@ -1,3 +1,8 @@
+# git to run actions on github
+git add .
+git commit -am "commit message"
+git push origin
+
 docker login -u baldaivanovna
 docker build .
 # create django project via docker
