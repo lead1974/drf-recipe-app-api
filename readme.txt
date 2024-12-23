@@ -1,4 +1,4 @@
-# git to run actions on github
+# git to run actions on github.
 git add .
 git commit -am "commit message"
 git push origin
