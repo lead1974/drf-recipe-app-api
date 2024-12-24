@@ -14,7 +14,7 @@ docker-compose up
 docker-compose run --rm app sh -c "python manage.py startapp core"
 
 # run test coammand
-docker-compose run --rm app sh -c "python manage.py test"
+docker-compose run --rm app sh -c "python manage.py test && flake8"
 
 # run command
 docker-compose run --rm app sh -c "python manage.py wait_for_db"
