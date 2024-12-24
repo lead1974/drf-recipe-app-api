@@ -18,3 +18,17 @@ docker-compose run --rm app sh -c "python manage.py test && flake8"
 
 # run command
 docker-compose run --rm app sh -c "python manage.py wait_for_db"
+
+# @ 47 test user model tests/test_models.py
+docker-compose run --rm app sh -c "python manage.py test && flake8"
+
+# @ 48 makemigraitons
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+docker volume ls
+docker volume rm drf-recipe-app-api_dev-db-data
+
+
+# @ 51 create superuser
+docker-compose run --rm app sh -c "python manage.py createsuperuser"
+
