@@ -32,3 +32,5 @@ docker volume rm drf-recipe-app-api_dev-db-data
 # @ 51 create superuser
 docker-compose run --rm app sh -c "python manage.py createsuperuser"
 
+# @66 create user app (API)
+docker-compose run --rm app sh -c "python manage.py startapp user"
