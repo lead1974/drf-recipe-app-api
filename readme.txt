@@ -37,3 +37,8 @@ docker-compose run --rm app sh -c "python manage.py startapp user"
 
 # @79 creating Recipe model
 docker-compose run --rm app sh -c "python manage.py makemigrations && python manage.py migrate"
+# @80 creating Recipe app
+docker-compose run --rm app sh -c "python manage.py startapp recipe"
+ 1. delete recipe/admin.py, recipe/models.py, recipe/tests.py
+ 2. create recipe/tests/__init__.py
+ 3. app/settings.py add 'recipe' to INSTALLED_APPS
