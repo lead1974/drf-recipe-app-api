@@ -34,3 +34,6 @@ docker-compose run --rm app sh -c "python manage.py createsuperuser"
 
 # @66 create user app (API)
 docker-compose run --rm app sh -c "python manage.py startapp user"
+
+# @79 creating Recipe model
+docker-compose run --rm app sh -c "python manage.py makemigrations && python manage.py migrate"
