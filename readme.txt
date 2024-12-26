@@ -45,3 +45,6 @@ docker-compose run --rm app sh -c "python manage.py startapp recipe"
 
 # @91 creating Tags model
 docker-compose run --rm app sh -c "python manage.py makemigrations && python manage.py migrate"
+
+# @127 imap upload API
+swagger image upload requires in settings.py:  'COMPONENT_SPLIT_REQUEST': True,
