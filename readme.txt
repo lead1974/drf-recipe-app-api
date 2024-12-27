@@ -48,3 +48,13 @@ docker-compose run --rm app sh -c "python manage.py makemigrations && python man
 
 # @127 imap upload API
 swagger image upload requires in settings.py:  'COMPONENT_SPLIT_REQUEST': True,
+
+# @141 after building proxy/Dockerfile need to run
+cd proxy
+docker build .
+
+# @144 after update django settings.py we need to test our deployement setup
+docker-compose -f docker-compose-deploy.yml down
+docker-compose -f docker-compose-deploy.yml up
+
+
