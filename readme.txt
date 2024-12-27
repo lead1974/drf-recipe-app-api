@@ -53,8 +53,11 @@ swagger image upload requires in settings.py:  'COMPONENT_SPLIT_REQUEST': True,
 cd proxy
 docker build .
 
+<<<<<<< HEAD
 # @144 after update django settings.py we need to test our deployement setup
 docker-compose -f docker-compose-deploy.yml down
 docker-compose -f docker-compose-deploy.yml up
+=======
+>>>>>>> 6ffc037508bbae42a5a034ec00a2c681f7dc539f
 
 
