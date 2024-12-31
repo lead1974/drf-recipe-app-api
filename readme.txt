@@ -134,3 +134,28 @@ remote: Compressing objects: 100% (159/159), done.
 remote: Total 243 (delta 120), reused 186 (delta 67), pack-reused 0 (from 0)
 Receiving objects: 100% (243/243), 44.64 KiB | 774.00 KiB/s, done.
 Resolving deltas: 100% (120/120), done.
+
+# @152 start the porject via docker in aws EC2
+# start in the background
+docker-compose -f docker-compose-deploy.yml up -d
+
+# open browser and use public url to launc the web api
+# create suepruser in new instance
+docker-compose -f docker-compose-deploy.yml run --rm app sh -c "python manage.py createsuperuser"
+
+# shutdown the docker
+docker-compose -f docker-compose-deploy.yml down
+# remove the volumes
+docker-compose -f docker-compose-deploy.yml down --volumes
+# view logs
+docker-compose -f docker-compose-deploy.yml logs
+
+# If you push new versions, pull new changes to the server by running the following command:
+git pull origin
+
+Then, re-build the app image so it includes the latest code by running:
+docker-compose -f docker-compose-deploy.yml build app
+To apply the update, run:
+docker-compose -f docker-compose-deploy.yml up --no-deps -d app
+The --no-deps -d ensures that the dependant services (such as proxy) do not restart.
+
